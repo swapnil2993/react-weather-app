@@ -11,27 +11,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import moment from 'moment-timezone';
 import { faThermometerFull, faWind } from '@fortawesome/free-solid-svg-icons'
 
-const Details = ({ item }) => {
+const Details = ({ data }) => {
   return (
     <DetailsContainer>
       <Time>
-        {moment(item.startTime).tz('America/Los_Angeles').format('YYYY-MM-DD ha') } - {moment(item.endTime).tz('America/Los_Angeles').format('YYYY-MM-DD ha') }
+        {moment(data.startTime).tz('America/Los_Angeles').format('lll') } to {moment(data.endTime).tz('America/Los_Angeles').format('lll') }
       </Time>
       <Row>
         <Col>
           <FontAwesomeIcon icon={faThermometerFull} size='3x' />
           <Text>
-            {item.temperature}&#176;{item.temperatureUnit}
+            {data.temperature}&#176;{data.temperatureUnit}
           </Text>
         </Col>
         <Col>
           <FontAwesomeIcon icon={faWind} size='3x' />
           <Text>
-            {item.windSpeed} {item.windDirection}
+            {data.windSpeed} {data.windDirection}
           </Text>
         </Col>
       </Row>
-      <Description>{item.detailedForecast}</Description>
+      <Description>{data.detailedForecast}</Description>
     </DetailsContainer>
   )
 }

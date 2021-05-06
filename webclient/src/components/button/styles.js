@@ -2,5 +2,6 @@ import styled from "@emotion/styled";
 import tw from 'twin.macro'
 
 export const StyledButton = styled('button')`
-  ${tw`shadow hover:bg-gray-700 bg-gray-800 rounded-2xl text-white font-bold py-2 px-10 mx-4`}
+  ${props=> props.isPrimary ? tw`hover:bg-gray-700 bg-gray-800 text-white` : tw`hover:bg-gray-100 bg-gray-400 text-black` }
+  ${tw`shadow rounded-2xl font-bold py-2 px-12 mx-4 disabled:opacity-75 opacity-100`}
 `

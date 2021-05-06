@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Details from './Details'
+import Details from '../details'
 import ForecastCard from './Forecast'
 import {
   ResultContainer,
@@ -16,18 +16,18 @@ const Results = ({ data }) => {
     <ResultContainer>
       <ForecastsContainer>
         <CardsContainer>
-          {data.periods.map((item, index) => {
+          {data.periods.map((item) => {
             return (
               <ForecastCard
-                key={index}
-                item={item}
+                key={item.number}
+                data={item}
                 isSelected={selectedForecast.number === item.number}
                 handleOnClick={handleOnClick}
               ></ForecastCard>
             )
           })}
         </CardsContainer>
-        <Details item={selectedForecast} />
+        <Details data={selectedForecast} />
       </ForecastsContainer>
     </ResultContainer>
   )

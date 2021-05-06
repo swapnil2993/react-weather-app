@@ -7,7 +7,7 @@ export const Form = styled('form')`
 `
 
 export const StreetAddress = styled(InputContainer)`
-  ${tw`w-full py-3`}
+  ${tw`w-full py-2`}
 `
 
 export const Row = styled('div')`
@@ -15,7 +15,7 @@ export const Row = styled('div')`
 `
 
 export const Col = styled('div')`
-  ${tw`w-full md:w-1/3 px-3 mb-6 md:mb-0`}
+  ${tw`w-full md:w-1/3 px-3 mb-2 md:mb-0`}
 `
 
 export const ButtonContainer = styled('div')`

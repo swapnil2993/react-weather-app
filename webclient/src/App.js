@@ -3,18 +3,17 @@ import AddressForm from './containers/address-form'
 import Results from './containers/results'
 import axios from 'axios'
 import queryString from 'query-string'
-import BarLoader from "react-spinners/BarLoader";
+import BarLoader from 'react-spinners/BarLoader'
 import { Layout, LayoutWrapper } from './styles'
-import NotFound from './containers/not-found'
-import { css } from "@emotion/react";
+import NotFound from './components/not-found'
+import { css } from '@emotion/react'
 
 const override = css`
   display: block;
   width: 100%;
   margin: 0 auto;
   border-color: red;
-`;
-
+`
 
 function App () {
   const [results, setResults] = useState(null)
@@ -49,12 +48,15 @@ function App () {
     <LayoutWrapper>
       <Layout>
         <AddressForm handleSubmit={handleSubmit} handleReset={handleReset} />
-        <>
-          <BarLoader color='#ffffff' loading={isLoading} css={override} height={4} width={100} />
-          {results && <Results data={results.properties} />}
-          {errors!=='' && !isLoading && <NotFound text={errors} />}
-        </>
-        )}
+        <BarLoader
+          color='#ffffff'
+          loading={isLoading}
+          css={override}
+          height={4}
+          width={100}
+        />
+        {results && <Results data={results.properties} />}
+        {errors !== '' && !isLoading && <NotFound text={errors} />}
       </Layout>
     </LayoutWrapper>
   )

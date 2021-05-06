@@ -22,7 +22,6 @@ const InputContainer = ({
         onChange={onChange}
         value={value}
       />
-      {/* <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p> */}
     </InputWrapper>
   )
 }

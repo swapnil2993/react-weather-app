@@ -8,8 +8,15 @@ import { Form, StreetAddress, Row, Col, ButtonContainer } from './styles'
 const AddressForm = ({ handleSubmit, handleReset }) => {
   const [data, dispatch] = useSetFormData()
 
-  const onSubmit = (e)=>{
+  const isButtonDisabled = data =>
+    Object.keys(data)
+      .every(key => data[key] === '')
+
+  const onSubmit = e => {
     e.preventDefault()
+    if (isButtonDisabled(data)) {
+      return
+    }
     handleSubmit(data)
   }
 
@@ -63,8 +70,12 @@ const AddressForm = ({ handleSubmit, handleReset }) => {
         </Col>
       </Row>
       <ButtonContainer>
-        <Button type="submit">Search</Button>
-        <Button type="reset">Reset</Button>
+        <Button isPrimary type='submit' disabled={isButtonDisabled(data)}>
+          Search
+        </Button>
+        <Button isPrimary={false} type='reset'>
+          Reset
+        </Button>
       </ButtonContainer>
     </Form>
   )
