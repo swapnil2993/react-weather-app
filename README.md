@@ -49,7 +49,11 @@ $ cd npm run build
 ```
 ### Todos
 
+[] - Adding more validation errors on UI 
+[] - Email on address failure
 
+### Demo
+[Link](https://swap-weather-app.herokuapp.com/)
 
 
 
