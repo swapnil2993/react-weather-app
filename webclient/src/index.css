@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import-normalize;
+
+* {
+  @apply box-border p-0 m-0;  
+  font-family: 'Montserrat', sans-serif
+}
+
+body {
+  @apply min-h-screen relative w-full h-full;
+}
+
