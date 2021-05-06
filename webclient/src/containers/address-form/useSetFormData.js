@@ -9,7 +9,6 @@ const initialState = {
 
 const useSetFormData = () => {
   return useReducer((state, action) => {
-    console.log(action)
     switch (action.type) {
       case 'RESET_FORM':
         return {
