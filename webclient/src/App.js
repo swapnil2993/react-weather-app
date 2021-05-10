@@ -25,7 +25,7 @@ function App () {
     const query = queryString.stringify(data)
     let result
     try {
-      result = await axios.get(`http://localhost:3001/api/address?${query}`)
+      result = await axios.get(`${process.env.REACT_APP_API_URL}/api/address?${query}`)
       if (result.status === 200) {
         setResults(result.data.data)
         setIsLoading(false)
