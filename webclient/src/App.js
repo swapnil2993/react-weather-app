@@ -33,7 +33,8 @@ function App () {
       }
     } catch (error) {
       setResults(null)
-      setErrors(error.response.data.message)
+      console.log({error})
+      setErrors(error?.response?.data?.message || 'Something went wrong')
       setIsLoading(false)
     }
   }

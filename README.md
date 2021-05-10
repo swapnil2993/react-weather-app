@@ -55,5 +55,6 @@ $ cd npm run build
 ### Demo
 [Link](https://swap-weather-app.herokuapp.com/)
 
+### Image
 
-
+![Desktop view](https://github.com/swapnil2993/react-weather-app/tree/main/webclient/src/images/desktop.png)
